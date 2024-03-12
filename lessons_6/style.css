@@ -1,0 +1,40 @@
+p {
+    padding: 1rem;
+    position: relative;
+    font-size: 2rem;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+p::before {
+    height: 100%;
+    width: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: .5;
+}
+
+#bg1::before {
+    background-image:
+        url("https://sportishka.com/uploads/posts/2022-04/thumbs/1650611947_53-sportishka-com-p-gorod-almati-kazakhstan-krasivo-foto-59.jpg");
+}
+
+#bg2::before {
+    background-image:
+        url("https://sportishka.com/uploads/posts/2022-04/thumbs/1650611947_53-sportishka-com-p-gorod-almati-kazakhstan-krasivo-foto-59.jpg");
+}
+
+p:hover {
+    color: #fff;
+}
+
+p:hover::before {
+    opacity: 1;
+}
+
+p:active {
+    opacity: .75;
+}
