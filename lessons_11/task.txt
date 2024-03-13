@@ -1,0 +1,45 @@
+a. Как описываются функции в JS?
+a. Функции в JS описываются с помощью ключевого слова `function` и имени функции.
+
+javascript
+function myFunction() {
+    // код функции
+}
+
+b. Как добавить обработчик события в JS?
+b. Обработчики событий добавляются с помощью метода `addEventListener()`.
+
+javascript
+document.getElementById('myButton').addEventListener('click', function() {
+    // код обработчика
+});
+
+c. Как добавить/удалить класс HTML-элемента в JS?
+c. Для добавления класса HTML-элементу используется метод `classList.add()`, а для удаления - `classList.remove()`.
+
+javascript
+document.getElementById('myElement').classList.add('myClass');
+document.getElementById('myElement').classList.remove('myClass');
+
+d. Как создать новые элементы в JS?
+d. Новые элементы создаются с помощью метода `createElement()`.
+
+javascript
+var newElement = document.createElement('div');
+
+e. Как получить значение поля ввода в JS?
+e. Значение поля ввода можно получить через свойство `value` элемента.
+
+javascript
+var inputValue = document.getElementById('myInput').value;
+
+f. Что делает CSS-свойство box-sizing?
+f. CSS-свойство `box-sizing` управляет моделью контента элемента, определяя, как учитывать границы и поля при определении размеров элемента.
+
+
+
+
+
+
+
+
