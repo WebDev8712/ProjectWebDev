@@ -17,12 +17,12 @@ p::before {
     opacity: .5;
 }
 
-#bg1::before {
+p:first-child::before {
     background-image:
         url("https://sportishka.com/uploads/posts/2022-04/thumbs/1650611947_53-sportishka-com-p-gorod-almati-kazakhstan-krasivo-foto-59.jpg");
 }
 
-#bg2::before {
+p:nth-child(2)::before {
     background-image:
         url("https://sportishka.com/uploads/posts/2022-04/thumbs/1650611947_53-sportishka-com-p-gorod-almati-kazakhstan-krasivo-foto-59.jpg");
 }
