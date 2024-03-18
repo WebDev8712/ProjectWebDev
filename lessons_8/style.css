@@ -51,7 +51,7 @@ div img:hover {
 }
 
 div {
-    animation: show 1s formards;
+    animation: show 1s forwards;
 }
 
 a:hover {
