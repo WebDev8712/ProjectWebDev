@@ -1,49 +1,55 @@
-html, body{
-    width: 100%;
+html, body {
     height: 100%;
+    width: 100%;
     margin: 0;
 }
-
-#container{
-    width: 100%;
+#container {
     height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-#calc{
+#calc {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 1rem;
 }
-
-#calc input{
+#calc input {
     grid-column-start: 1;
     grid-column-end: 5;
-    /* text-align: right; */
+    text-align: right;
 }
-#calc button input{
+#calc button, input {
     padding: .5rem;
 }
-#add #sud #sul #div #sql #x2{
+#add, #sub, #mul, #div, #eql {
     grid-column-start: 4;
 }
-
-#add{
+#add {
     grid-row-start: 2;
 }
-
-#sub{
+#sub {
     grid-row-start: 3;
 }
-
-#sul{
+#mul {
     grid-row-start: 4;
 }
-#div{
+#div {
     grid-row-start: 5;
 }
-#sql{
+#eql {
     grid-row-start: 6;
+}
+#clr {
+    grid-column-start:1 ;
+    grid-row-start: 5;
+}
+#pow {
+    grid-column-start: 3;
+    grid-row-start: 6;
+}
+#rut {
+    grid-row-start: span 3;
+    grid-column-start: span 2;
 }
