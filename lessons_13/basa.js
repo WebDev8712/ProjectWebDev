@@ -1,78 +1,135 @@
-function elem(selector){
-    return document.querySelector(selector)
+function elem(selector) {
+    return document.querySelector(selector);
 }
 
-function elems(selector){
-    return document.querySelectorAll(selector)
+function elems(selector) {
+    return document.querySelectorAll(selector);
 }
 
-let input = elem("input")
-    ,last_number
-    opener;
+let input = elem("input"),
+    last_number,
+    operation;
 
-elems('.number').forEach(button=>{
-    button.addEventListener("click", function(){
+elems(".number").forEach(button => {
+    button.addEventListener("click", function () {
         let number = this.innerText;
-        input.value = input.value + number;
-    })
-})
+        input.value += number;
+    });
+});
 
-
-elem('#add').addEventListener("click", function(){
+elem("#add").addEventListener("click", function() {
     last_number = input.value;
     input.value = "";
-    opener = "add"
+    operation = "add";
+    input.setAttribute("placeholder","")
 })
-elem('#sub').addEventListener("click", function(){
+
+elem("#sub").addEventListener("click", function() {
     last_number = input.value;
     input.value = "";
-    opener = "sub"
+    operation = "sub";
+    input.setAttribute("placeholder","")
 })
 
-elem('#sul').addEventListener("click", function(){
+elem("#mul").addEventListener("click", function() {
     last_number = input.value;
     input.value = "";
-    opener = "sul"
+    operation = "mul";
+    input.setAttribute("placeholder","")
 })
 
-elem('#div').addEventListener("click", function(){
+elem("#div").addEventListener("click", function() {
     last_number = input.value;
     input.value = "";
-    opener = "div"
+    operation = "div";
+    input.setAttribute("placeholder","")
+})
+
+elem("#pow").addEventListener("click", function() {
+    last_number = input.value;
+    input.value = "";
+    operation = "pow";
+    input.setAttribute("placeholder","")
 })
 
 
-elem("#sql").addEventListener("click", function(){
-    if (last_number && opener){
+
+elem("#eql").addEventListener("click", function() {
+    if (last_number && operation) {
         let result;
-        switch (opener){
-            case "add":{
-                result = parseInt(last_number) + parseInt(input.value);
-            } break;
-            case "sub":{
-                result = parseInt(last_number) - parseInt(input.value);
-            } break;
-            case "sul":{
-                result = parseInt(last_number) * parseInt(input.value);
-            } break;
-            case "div":{
-                result = parseInt(last_number) / parseInt(input.value);
-            } break;
-        }
-        input.value = result
-        last_number = null;
-        opener = null;
+    switch (operation) {
+        case "add": {
+            if (input.value !== "")
+                {result = parseInt(last_number) + parseInt(input.value);
+            }
+            else{
+                result = "";
+                input.setAttribute("placeholder","Error")
+            }
+            
+        } break;
+        case "sub": {
+            if (input.value !== "")
+                {result = parseInt(last_number) - parseInt(input.value);
+            }
+            else{
+                result = "";
+                input.setAttribute("placeholder","Error")
+            }
+        } break;
+        case "mul": {
+            if (input.value !== "")
+                {result = parseInt(last_number) * parseInt(input.value);
+            }
+            else{
+                result = "";
+                input.setAttribute("placeholder","Error")
+            }
+        } break;
+        case "div": {
+            if (input.value !=0 && input.value !== "")
+                {result = parseInt(last_number) / parseInt(input.value);
+            }
+            else {
+                result = "";
+                input.setAttribute("placeholder","Error")   
+            }
+        } break;
+        case "pow": {
+            if (input.value !== "")
+                {result = parseInt(last_number) ** parseInt(input.value);
+            }
+            else {
+                result = "";
+                input.setAttribute("placeholder","Error")
+                
+            }
+        } break;
+        
+    } 
+
+    input.value = result;
+    last_number = null;
+    operation = null;
     }
+    
 })
 
+elem("#sqr").addEventListener("click", function () {
+    let number = parseInt(input.value);
+    if (input.value !="")
+    {input.value = number * number;}
+});
 
-elem("#x2").addEventListener("click", function(){
-    let number = parseInt(input.value)
-    input.value = Math.pow(last_number, 2);
-})
-
-elem("#clr").addEventListener("click", function(){
+elem("#clr").addEventListener("click", function () {
     input.value = "";
     last_number = null;
-    opener = null;
+    operation = null;
+    input.setAttribute("placeholder","")
+});
+
+elem("#rut").addEventListener("click", function () {
+    let number = parseInt(input.value);
+    if (input.value !="")
+    {input.value = number ** (1/2);}
 })
